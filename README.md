@@ -1,2 +1,3 @@
-# docker
-Docker provider for AnyPackage
+# AnyPackage.Docker
+
+Docker provider for AnyPackage.
