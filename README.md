@@ -12,7 +12,7 @@
 [cf-site]: https://www.codefactor.io/repository/github/anypackage/docker
 
 `AnyPackage.Docker` is an AnyPackage provider that facilitates managing Docker
-apps.
+images.
 
 ## Install AnyPackage.Docker
 
