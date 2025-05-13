@@ -18,7 +18,6 @@ apps.
 
 ```powershell
 Install-PSResource AnyPackage
-Install-PSResource AnyPackage.Docker -SkipDependencyCheck
 ```
 
 ## Import AnyPackage.Docker
