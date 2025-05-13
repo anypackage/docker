@@ -1,13 +1,9 @@
 #Requires -Modules AnyPackage.Docker
 
-Describe Get-Package {
+Describe Get-PackageProvider {
     Context 'with no parameters' {
         It 'should return results' {
-            $packages = Get-Package
-
-            Write-Verbose ($packages | Out-String) -Verbose
-            
-            Get-Package |
+            Get-PackageProvider |
             Should -Not -BeNullOrEmpty
         }
     }
