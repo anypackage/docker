@@ -7,7 +7,7 @@ class DockerProvider : PackageProvider, IGetPackage, IInstallPackage, IUninstall
     [void] GetPackage ([PackageRequest] $request) {
         $images = docker image list --format json --no-trunc --digests | ConvertFrom-Json
 
-        foreach ($image in $images) { 
+        foreach ($image in $images) {
             try {
                 $repo = $this.ParseRepository($image.Repository, $request)
             } catch {
@@ -24,7 +24,7 @@ class DockerProvider : PackageProvider, IGetPackage, IInstallPackage, IUninstall
 
     [void] InstallPackage ([PackageRequest] $request) {
         $id = ''
-        
+
         if ($request.Source) {
             $id += "{0}/" -f $request.Source
         }
@@ -55,13 +55,13 @@ class DockerProvider : PackageProvider, IGetPackage, IInstallPackage, IUninstall
                 Provider    = $request.ProviderInfo.FullName
                 ErrorAction = 'SilentlyContinue'
             }
-            
+
             if ($request.Version) {
                 $getPackageParameters['Version'] = $request.Version
             }
 
             $package = Get-Package @getPackageParameters
-            
+
             $request.WritePackage($package)
         }
     }
